@@ -74,29 +74,6 @@ def unit_conversion_mathematics():
 if __name__ == '__main__':
     main()
 
-from PIL import Image, ImageDraw, ImageFont
-
-# Funktion zur Erstellung des Logos
-def create_logo(width, height, initials):
-    # Hintergrundfarbe definieren (weiß)
-    background_color = (255, 255, 255)
-
-    # Neues Bild erstellen
-    logo = Image.new('RGB', (width, height), background_color)
-
-    # Zeichenobjekt erstellen
-    draw = ImageDraw.Draw(logo)
-
-    # Schriftart und -größe definieren
-    font = ImageFont.truetype('arial.ttf', size=100)
-
-    # Zeichne die Initialen "A" und "B"
-    draw.text((50, 50), initials[0], fill='black', font=font)
-    draw.text((width-150, height-150), initials[1], fill='black', font=font)
-
-    # Zeichne Zahlen und Einheiten
-    draw.text((200, 200), '123', fill='black', font=font)
-    draw.text((width-300, height-300), 'm', fill='black', font=font)
 
    
 
