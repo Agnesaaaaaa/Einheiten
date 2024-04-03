@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-formatted_text = st.markdown('<h1 style="color: blue; border-bottom: 2px solid lightpink;">Einheiten Umrechnen</h1>', unsafe_allow_html=True)
+formatted_text = st.markdown('<h1 style="color: green; border-bottom: 2px solid lightpink;">Einheiten Umrechnen</h1>', unsafe_allow_html=True)
 def main():
     import streamlit as st
 
