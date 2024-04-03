@@ -110,6 +110,8 @@ if __name__ == '__main__':
 
 import streamlit as st
 
+import streamlit as st
+
 def main():
     st.title('Einheiten Umrechner')
 
@@ -139,16 +141,27 @@ def main():
 def unit_conversion_weight():
     st.header('Gewichtsumrechner')
 
-    # Gewichtseinheiten: Kilogramm, Gramm, Milligramm
-    # Hier kann der Benutzer ein Gewicht in einer Einheit eingeben und es in andere Einheiten umrechnen
-    # Beispielcode für die Gewichtsumrechnung
+    weight_units = ['Kilogramm (kg)', 'Gramm (g)', 'Milligramm (mg)']
+    input_unit = st.selectbox('Wähle Eingabeeinheit:', weight_units)
+    input_value = st.number_input(f'Gib den Wert in {input_unit} ein:')
 
-def unit_conversion_volume():
-    st.header('Volumenumrechner')
+    # Umrechnungsfaktoren für die verschiedenen Gewichtseinheiten
+    unit_factors = {
+        'Kilogramm (kg)': 1,
+        'Gramm (g)': 1000,
+        'Milligramm (mg)': 1000000
+    }
 
-    # Volumeneinheiten: Liter, Milliliter, Mikroliter
-    # Hier kann der Benutzer ein Volumen in einer Einheit eingeben un
+    output_unit = st.selectbox('Wähle Ziel Einheit:', weight_units)
 
+    output_value = input_value * (unit_factors[input_unit] / unit_factors[output_unit])
+
+    st.write(f'Das Ergebnis ist {output_value} {output_unit}.')
+
+# Weitere Funktionen für die Umrechnung von anderen Maßeinheiten können hier hinzugefügt werden...
+
+if __name__ == '__main__':
+    main()
 
    
 
