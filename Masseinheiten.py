@@ -108,6 +108,46 @@ def calculate_dosage(weight):
 if __name__ == '__main__':
     main()
 
+import streamlit as st
+
+def main():
+    st.title('Einheiten Umrechner')
+
+    category = st.sidebar.selectbox('Wähle Kategorie:', ['Gewicht', 'Volumen', 'Zeit', 'Temperatur', 'Blutdruck', 'Blutzucker', 'Herzfrequenz', 'Atemfrequenz', 'Dosierung', 'Flüssigkeitsstrom'])
+
+    if category == 'Gewicht':
+        unit_conversion_weight()
+    elif category == 'Volumen':
+        unit_conversion_volume()
+    elif category == 'Zeit':
+        unit_conversion_time()
+    elif category == 'Temperatur':
+        unit_conversion_temperature()
+    elif category == 'Blutdruck':
+        unit_conversion_blood_pressure()
+    elif category == 'Blutzucker':
+        unit_conversion_blood_sugar()
+    elif category == 'Herzfrequenz':
+        unit_conversion_heart_rate()
+    elif category == 'Atemfrequenz':
+        unit_conversion_respiratory_rate()
+    elif category == 'Dosierung':
+        unit_conversion_dosage()
+    elif category == 'Flüssigkeitsstrom':
+        unit_conversion_fluid_flow()
+
+def unit_conversion_weight():
+    st.header('Gewichtsumrechner')
+
+    # Gewichtseinheiten: Kilogramm, Gramm, Milligramm
+    # Hier kann der Benutzer ein Gewicht in einer Einheit eingeben und es in andere Einheiten umrechnen
+    # Beispielcode für die Gewichtsumrechnung
+
+def unit_conversion_volume():
+    st.header('Volumenumrechner')
+
+    # Volumeneinheiten: Liter, Milliliter, Mikroliter
+    # Hier kann der Benutzer ein Volumen in einer Einheit eingeben un
 
 
    
