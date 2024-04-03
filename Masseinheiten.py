@@ -74,6 +74,41 @@ def unit_conversion_mathematics():
 if __name__ == '__main__':
     main()
 
+import streamlit as st
+
+def main():
+    st.title('Antibiotika Dosierung Rechner')
+
+    weight = st.number_input('Gib das Gewicht des Patienten in kg ein:')
+
+    if weight > 0:
+        dosage = calculate_dosage(weight)
+        st.write(f'Die empfohlene Dosierung für den Patienten beträgt {dosage} mg pro Tag.')
+
+def calculate_dosage(weight):
+    if weight <= 5:
+        return '250–500 mg pro Tag (3–4 Dosen zu je 100 mg)'
+    elif 6 <= weight <= 7:
+        return '350–700 mg pro Tag (4 Dosen zu je 100 mg oder 3 Dosen zu je 200 mg)'
+    elif 8 <= weight <= 10:
+        return '500–1000 mg pro Tag (3–4 Dosen zu je 200 mg)'
+    elif 11 <= weight <= 15:
+        return '750–1500 mg pro Tag (4 Dosen zu je 200 mg oder 3 Dosen zu je 400 mg)'
+    elif 16 <= weight <= 20:
+        return '1000–2000 mg pro Tag (3–4 Dosen zu je 400 mg)'
+    elif 21 <= weight <= 25:
+        return '1250–2000 mg pro Tag (3–4 Dosen zu je 400 mg)'
+    elif 26 <= weight <= 30:
+        return '1500–2000 mg pro Tag (4 Dosen zu je 400 mg)'
+    elif 31 <= weight <= 40:
+        return '2000 mg pro Tag (4 Dosen zu je 400 mg)'
+    else:
+        return 'Keine Dosierungsinformationen verfügbar für das angegebene Gewicht.'
+
+if __name__ == '__main__':
+    main()
+
+
 
    
 
